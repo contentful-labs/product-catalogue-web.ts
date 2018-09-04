@@ -4,13 +4,13 @@ import { createClient, Entry, Space, ContentfulClientApi } from 'contentful';
 // change these to include your own settings
 const DEFAULT_CONFIG = {
   credentials: {
-    space: 'wl1z0pal05vy',
-    accessToken: '0e3ec801b5af550c8a1257e8623b1c77ac9b3d8fcfc1b2b7494e3cb77878f92a',
+    space: 'bkp1t915hkvx',
+    accessToken: 'f11f4df5e62a44e0d85cbfa912ea9e3b3a562496760dcb9ddcbf7d53f37eb168',
   },
 
   contentTypeIds: {
-    product: '2PqfXUJwE8qSYKuM0U6w8M',
-    category: '6XwpTaSiiI2Ak2Ww0oi6qa'
+    product: 'product',
+    category: 'category'
   }
 }
 
@@ -67,7 +67,7 @@ export class ContentfulService {
   // fetch categories
   getCategories(): Promise<Entry<any>[]> {
     return this.cdaClient.getEntries({
-      content_type: '6XwpTaSiiI2Ak2Ww0oi6qa'
+      content_type: DEFAULT_CONFIG.contentTypeIds.category
     })
     .then(res => res.items);
   }
